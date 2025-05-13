@@ -1,0 +1,304 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: var(--light-bg);
+    overflow-x: hidden;
+    padding-bottom: var(--footer-height);
+    position: relative;
+    
+    
+}
+
+.roboto-regular {
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+
+
+.custom-tabs {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+}
+
+.nav-tabs {
+    border: none;
+    gap: 10px;
+    padding: 6px;
+    background: #f8f9fd;
+    border-radius: 12px;
+}
+
+.nav-link {
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 10px 20px !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    z-index: 1;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    z-index: -1;
+    transform: translateY(100%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::before {
+    transform: translateY(0);
+}
+
+.nav-link.active {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Add Bus Tab Styling */
+#add-bus-tab {
+    background: linear-gradient(135deg, #FF6B6B, #FFE66D);
+    color: #fff;
+}
+
+#add-bus-tab:not(.active) {
+    background: #fff;
+    color: #FF6B6B;
+}
+
+#add-bus-tab:hover:not(.active) {
+    background: linear-gradient(135deg, #FF6B6B, #FFE66D);
+    color: #fff;
+}
+
+/* Edit Bus Tab Styling */
+#edit-bus-tab {
+    background: linear-gradient(135deg, #4E65FF, #92EFFD);
+    color: #fff;
+}
+
+#edit-bus-tab:not(.active) {
+    background: #fff;
+    color: #4E65FF;
+}
+
+#edit-bus-tab:hover:not(.active) {
+    background: linear-gradient(135deg, #4E65FF, #92EFFD);
+    color: #fff;
+}
+/* Add Bus Tab Styling */
+#manager-tab {
+    background: linear-gradient(135deg, #FF6B6B, #FFE66D);
+    color: #fff;
+}
+
+#manager-tab:not(.active) {
+    background: #fff;
+    color: #FF6B6B;
+}
+
+#manager-tab:hover:not(.active) {
+    background: linear-gradient(135deg, #FF6B6B, #FFE66D);
+    color: #fff;
+}
+
+/* Edit Bus Tab Styling */
+#indent-tab {
+    background: linear-gradient(135deg, #4E65FF, #92EFFD);
+    color: #fff;
+}
+
+#indent-tab:not(.active) {
+    background: #fff;
+    color: #4E65FF;
+}
+
+#indent-tab:hover:not(.active) {
+    background: linear-gradient(135deg, #4E65FF, #92EFFD);
+    color: #fff;
+}
+
+#purchaseorder-tab {
+    background: linear-gradient(135deg, #FF7A4E, #FFD392);
+    color: #fff;
+}
+
+#purchaseorder-tab:not(.active) {
+    background: #fff;
+    color: #FF7A4E;
+}
+
+#purchaseorder-tab:hover:not(.active) {
+    background: linear-gradient(135deg, #FF7A4E, #FFD392);
+    color: #fff;
+}
+.tab-icon {
+    margin-right: 8px;
+    font-size: 0.9em;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover .tab-icon {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.nav-link.active .tab-icon {
+    animation: bounce 0.5s ease infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-2px); }
+}
+
+.tab-content {
+    padding: 20px;
+    margin-top: 15px;
+    background: #fff;
+    border-radius: 12px;
+    min-height: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+    position: relative;
+}
+
+.tab-pane {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.4s ease-out;
+}
+
+.tab-pane.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Glowing effect on active tab */
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 3px;
+    background: inherit;
+    border-radius: 6px;
+    filter: blur(2px);
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { opacity: 0.6; width: 40%; }
+    to { opacity: 1; width: 55%; }
+}
+
+.modal {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+.modal-dialog {
+    transition: all 0.3s ease-in-out;
+    transform: scale(0.7);
+    opacity: 0;
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-content {
+    border-radius: 15px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, #f0f0f0, #ffffff);
+    border: none;
+    overflow: hidden;
+}
+
+.modal-header {
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    padding: 15px 20px;
+    border-bottom: none;
+}
+
+.modal-header .modal-title {
+    font-weight: 200;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header .btn-close {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    opacity: 1;
+    width: 30px;
+    height: 30px;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e");
+    background-size: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.modal-header .btn-close:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.modal-header .btn-close:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+    outline: none;
+}
+
+.modal-body {
+    padding: 20px;
+    background: #f8f9fa;
+}
+
+.modal-body p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.modal-body p strong {
+    color: #2575fc;
+}
+
+.modal-body .badge {
+    font-size: 0.9em;
+    padding: 5px 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Animate entrance */
+@keyframes modalEnter {
+    0% {
+        opacity: 0;
+        transform: scale(0.7) translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal.show .modal-dialog {
+    animation: modalEnter 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
