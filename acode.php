@@ -1,7 +1,5 @@
 <?php
-
 //connection
-
 include("config.php");
 //inserting
 if (isset($_POST['id_remarks'])) {

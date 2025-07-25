@@ -6,27 +6,20 @@
 </head>
 
 </html>
-
 <?php
 include("config.php");
 session_start();
 //    include("index.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // username and password sent from form 
-
     $myusername = mysqli_real_escape_string($db, $_POST['email']);
     $mypassword = mysqli_real_escape_string($db, $_POST['pass']);
-
     $sql = "SELECT * FROM faculty2 WHERE id = '$myusername' and pass = '$mypassword'";
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     //$active = $row['active'];
-
     $count = mysqli_num_rows($result);
-
     // If result matched $myusername and $mypassword, table row must be 1 row
-
-
     if ($count == 1) {
         // session_register("myusername");
         $_SESSION['loggedin'] = TRUE;
@@ -64,10 +57,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIC</title>
+    <title>KR CONNECT</title>
     <link rel="icon" type="image/png" sizes="32x32" href="image/icons/mkce_s.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" rel="stylesheet">

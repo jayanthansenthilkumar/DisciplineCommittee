@@ -1,23 +1,15 @@
 <?php
-
 $start1 = date('d-m-Y', strtotime('last sunday'));
 $end1 = date('d-m-Y', strtotime('saturday this week'));
-
-
-
 require 'config.php';
 include('session.php');
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIC</title>
+    <title>KR CONNECT</title>
     <link rel="icon" type="image/png" sizes="32x32" href="image/icons/mkce_s.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
