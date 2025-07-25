@@ -10,7 +10,7 @@
         color: white;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         padding: 0 20px;
         transition: all 0.3s ease;
         z-index: 999;
@@ -37,12 +37,8 @@
 </style>
 <footer class="footer">
     <div class="footer-copyright" style="text-align: center;">
-        <p>Copyright © 2024 Designed by <span style="background: linear-gradient(to right, #cb2d3e, #ef473a);"
+        <p>Copyright © <?php echo date('Y'); ?> Designed by <span style="background: linear-gradient(to right, #cb2d3e, #ef473a);"
                 -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip:
                 text;">Technology Innovation Hub - MKCE. </span>All rights reserved.</p>
-    </div>
-    <div class="footer-links">
-
-        <a href="#"><i class="fab fa-linkedin"></i></a>
     </div>
 </footer>

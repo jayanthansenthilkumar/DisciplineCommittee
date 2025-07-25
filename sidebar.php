@@ -93,19 +93,10 @@
     .menu-item.active {
         background: rgba(255, 255, 255, 0.2);
         color: white;
-        font-weight: bold;
     }
 
     .menu-item.active i {
         color: white;
-    }
-
-    .has-submenu::after {
-        content: '\f107';
-        font-family: 'Font Awesome 6 Free';
-        font-weight: 900;
-        margin-left: 10px;
-        transition: transform 0.3s ease;
     }
 
     .has-submenu::after {
@@ -207,3 +198,42 @@
 
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get current page filename
+    const currentPage = window.location.pathname.split('/').pop();
+    
+    // Remove active class from all menu items
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Add active class to current page menu item
+    menuItems.forEach(item => {
+        const href = item.getAttribute('href');
+        if (href && href === currentPage) {
+            item.classList.add('active');
+        }
+    });
+    
+    // Handle special cases for specific pages
+    switch(currentPage) {
+        case 'chairperson.php':
+        case 'index.php':
+        case '':
+            document.querySelector('a[href="chairperson.php"]')?.classList.add('active');
+            break;
+        case 'student_date.php':
+            document.querySelector('a[href="student_date.php"]')?.classList.add('active');
+            break;
+        case 'report.php':
+            document.querySelector('a[href="report.php"]')?.classList.add('active');
+            break;
+        case 'search_data.php':
+            document.querySelector('a[href="search_data.php"]')?.classList.add('active');
+            break;
+    }
+});
+</script>

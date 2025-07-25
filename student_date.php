@@ -11,6 +11,7 @@ include("session.php");
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MIC</title>
         <link rel="icon" type="image/png" sizes="32x32" href="image/icons/mkce_s.png">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -28,6 +29,7 @@ include("session.php");
                 overflow-x: hidden;
                 color: #3e5569;
                 background: #fff;
+                font-family: 'Poppins', sans-serif;
             }
 
             .main-container {
@@ -445,7 +447,7 @@ include("session.php");
             .total-row1 td {
                 font-size: 15px;
                 /* Adjust the font size for the total row */
-                font-family: 'Arial', sans-serif;
+                font-family: 'Poppins', sans-serif;
                 font-weight: bold;
                 /* Optionally bolden the text */
                 line-height: 1.3;
@@ -903,7 +905,7 @@ include("session.php");
     <style>
         /* Overall styling */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 20px;
             background-color: #f4f4f4;

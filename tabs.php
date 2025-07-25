@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colorful Bus Management Tabs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         body {
             background: #f0f2f5;
+            font-family: 'Poppins', sans-serif;
         }
 
         .custom-tabs {
@@ -31,13 +33,15 @@
             border: none !important;
             border-radius: 10px !important;
             padding: 10px 20px !important;
-            font-weight: 600 !important;
+            font-weight: 400 !important;
             font-size: 0.95rem;
             letter-spacing: 0.3px;
             position: relative;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
             z-index: 1;
+            font-family: 'Poppins', sans-serif;
+            color: #666;
         }
 
         .nav-link::before {
@@ -59,7 +63,39 @@
 
         .nav-link.active {
             transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            font-weight: 500 !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: #fff !important;
+            border: 2px solid rgba(255,255,255,0.3) !important;
+            position: relative;
+        }
+
+        .nav-link.active::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0.3;
+            animation: pulse-active 2s infinite;
+        }
+
+        @keyframes pulse-active {
+            0% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.02); }
+            100% { opacity: 0.3; transform: scale(1); }
+        }
+
+        .nav-link:hover:not(.active) {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         /* Add Bus Tab Styling */
