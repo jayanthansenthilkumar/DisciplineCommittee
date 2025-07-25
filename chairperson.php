@@ -323,7 +323,7 @@ include('session.php');
         <div class="breadcrumb-area custom-gradient">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 d-flex align-items-center justify-content-between">
-                <h4 class="page-title mb-0">Discipline Committee</h4>
+                    <h4 class="page-title mb-0">Discipline Committee</h4>
                     <li class="mb-0">
                         <button class="btn btn-rounded btn-outline-warning shadow btnDownload" id="myButton"
                             data-bs-toggle="modal" data-bs-target="#myModal7">Send Report</button>
@@ -430,7 +430,7 @@ include('session.php');
             }
         }
 
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#zero_config').DataTable({
                 "paging": true,
                 "searching": true,
@@ -462,7 +462,7 @@ include('session.php');
         }
 
         //    automatic loader
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const loaderContainer = document.getElementById('loaderContainer');
             let loadingTimeout;
 
@@ -479,7 +479,7 @@ include('session.php');
             loadingTimeout = setTimeout(showError, 10000);
 
             // Hide loader when everything is loaded
-            window.onload = function () {
+            window.onload = function() {
                 clearTimeout(loadingTimeout);
 
                 // Add a small delay to ensure smooth transition
@@ -487,14 +487,14 @@ include('session.php');
             };
 
             // Error handling
-            window.onerror = function (msg, url, lineNo, columnNo, error) {
+            window.onerror = function(msg, url, lineNo, columnNo, error) {
                 clearTimeout(loadingTimeout);
                 showError();
                 return false;
             };
         });
 
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             // Cache DOM elements
             const elements = {
                 hamburger: document.getElementById('hamburger'),
@@ -623,8 +623,8 @@ include('session.php');
         });
 
 
-        $(document).ready(function () {
-            $('#emailForm').on('submit', function (e) {
+        $(document).ready(function() {
+            $('#emailForm').on('submit', function(e) {
                 e.preventDefault();
                 console.log("hello")
                 var formData = new FormData(this);
@@ -635,13 +635,13 @@ include('session.php');
                     data: formData,
                     contentType: false,
                     processData: false,
-                    success: function (response) {
+                    success: function(response) {
                         $('#loadingContainer').hide();
                         $('#myModal7').modal('hide');
                         $('#emailForm')[0].reset();
                         alertify.success('Message has been sent successfully!');
                     },
-                    error: function () {
+                    error: function() {
                         $('#loadingContainer').hide();
                         alertify.error('Message could not be sent.');
                     }

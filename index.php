@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     //$active = $row['active'];
-    
+
     $count = mysqli_num_rows($result);
 
     // If result matched $myusername and $mypassword, table row must be 1 row
@@ -31,41 +31,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // session_register("myusername");
         $_SESSION['loggedin'] = TRUE;
         $_SESSION['login_user'] = $myusername;
-        
-        ?>
+
+?>
         <script>
             swal.fire({
                 icon: 'success',
                 title: 'Success',
                 text: 'Login Successfully'
-            }).then(function () {
+            }).then(function() {
                 window.location = "student_date.php";
             });
         </script>
-        <?php
+    <?php
 
     } else {
-        ?>
+    ?>
         <script>
-
             swal.fire({
                 icon: 'error',
                 title: 'Login Failure',
                 text: 'Check login credentials'
-            }).then(function () {
+            }).then(function() {
                 window.location = "index.php";
             });
         </script>
-        <?php
+<?php
     }
 }
-
-
 ?>
-
-
-
-
 <html dir="ltr">
 
 <head>
@@ -140,12 +133,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <script>
-        document.getElementById("to-recover").addEventListener("click", function () {
+        document.getElementById("to-recover").addEventListener("click", function() {
             document.querySelector("form").classList.add("d-none");
             document.getElementById("recoverform").classList.remove("d-none");
         });
 
-        document.getElementById("to-login").addEventListener("click", function () {
+        document.getElementById("to-login").addEventListener("click", function() {
             document.querySelector("form").classList.remove("d-none");
             document.getElementById("recoverform").classList.add("d-none");
         });

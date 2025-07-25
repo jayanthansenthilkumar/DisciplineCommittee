@@ -57,9 +57,10 @@ include("session.php");
                 background-color: #e9ecef;
                 padding: 10px 0;
                 text-align: center;
-                position: fixed;
+                position: relative;
                 bottom: 0;
                 left: 0;
+                margin-top: auto;
             }
 
             :root {
@@ -82,8 +83,11 @@ include("session.php");
             .content {
                 margin-left: var(--sidebar-width);
                 padding-top: var(--topbar-height);
+                padding-bottom: 20px;
                 transition: all 0.3s ease;
-                min-height: 100vh;
+                min-height: calc(100vh - var(--topbar-height));
+                display: flex;
+                flex-direction: column;
             }
 
             /* Content Navigation */
@@ -232,10 +236,6 @@ include("session.php");
                     overflow: hidden;
                 }
 
-                .footer {
-                    left: 0 !important;
-                }
-
                 .content-nav ul {
                     flex-wrap: nowrap;
                     overflow-x: auto;
@@ -275,6 +275,7 @@ include("session.php");
 
             .container-fluid {
                 padding: 20px;
+                flex: 1;
             }
 
 
@@ -284,7 +285,7 @@ include("session.php");
                 left: var(--sidebar-width);
                 right: 0;
                 top: var(--topbar-height);
-                bottom: var(--footer-height);
+                bottom: 0;
                 background: rgba(255, 255, 255, 0.95);
                 display: flex;
                 /* Changed from 'none' to show by default */
@@ -422,9 +423,9 @@ include("session.php");
 
             @media screen and (max-width: 768px) {
                 .footer {
-                    position: absolute;
+                    position: relative;
                     bottom: 0px;
-
+                    margin-top: 20px;
                 }
             }
 
@@ -1133,6 +1134,7 @@ include("session.php");
             .total-row {
                 background-color: #e0e0e0 !important;
                 -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
         }
     </style>

@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->AltBody = strip_tags($body);
 
             // Send email to each recipient
-            while($row = $result->fetch_assoc()) {
+            while ($row = $result->fetch_assoc()) {
                 $mail->addAddress($row['id']);
                 $mail->send();
                 $mail->clearAddresses();
@@ -81,4 +81,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo "Invalid request.";
 }
-?>

@@ -23,397 +23,397 @@ include("session.php");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <style>
-    :root {
-        --sidebar-width: 250px;
-        --sidebar-collapsed-width: 70px;
-        --topbar-height: 60px;
-        --footer-height: 60px;
-        --primary-color: #4e73df;
-        --secondary-color: #858796;
-        --success-color: #1cc88a;
-        --dark-bg: #1a1c23;
-        --light-bg: #f8f9fc;
-        --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* General Styles with Enhanced Typography */
-
-    /* Content Area Styles */
-    .content {
-        margin-left: var(--sidebar-width);
-        padding-top: var(--topbar-height);
-        transition: all 0.3s ease;
-        min-height: 100vh;
-    }
-
-    /* Content Navigation */
-    .content-nav {
-        background: linear-gradient(45deg, #4e73df, #1cc88a);
-        padding: 15px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-    }
-
-    .content-nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        gap: 20px;
-        overflow-x: auto;
-    }
-
-    .content-nav li a {
-        color: white;
-        text-decoration: none;
-        padding: 8px 15px;
-        border-radius: 20px;
-        background: rgba(255, 255, 255, 0.1);
-        transition: all 0.3s ease;
-        white-space: nowrap;
-    }
-
-    .content-nav li a:hover {
-        background: rgba(255, 255, 255, 0.2);
-    }
-
-    .sidebar.collapsed+.content {
-        margin-left: var(--sidebar-collapsed-width);
-    }
-
-    .breadcrumb-area {
-        background: white;
-        border-radius: 10px;
-        box-shadow: var(--card-shadow);
-        margin: 20px;
-        padding: 15px 20px;
-    }
-
-    .breadcrumb-item a {
-        color: var(--primary-color);
-        text-decoration: none;
-        transition: var(--transition);
-    }
-
-    .breadcrumb-item a:hover {
-        color: #224abe;
-    }
-
-
-
-    /* Table Styles */
-
-
-
-    .gradient-header {
-        --bs-table-bg: transparent;
-        --bs-table-color: white;
-        background: linear-gradient(135deg, #4CAF50, #2196F3) !important;
-
-        text-align: center;
-        font-size: 0.9em;
-
-
-    }
-
-
-    td {
-        text-align: left;
-        font-size: 0.9em;
-        vertical-align: middle;
-        /* For vertical alignment */
-    }
-
-
-
-
-
-
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-        .sidebar {
-            transform: translateX(-100%);
-            width: var(--sidebar-width) !important;
+        :root {
+            --sidebar-width: 250px;
+            --sidebar-collapsed-width: 70px;
+            --topbar-height: 60px;
+            --footer-height: 60px;
+            --primary-color: #4e73df;
+            --secondary-color: #858796;
+            --success-color: #1cc88a;
+            --dark-bg: #1a1c23;
+            --light-bg: #f8f9fc;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .sidebar.mobile-show {
-            transform: translateX(0);
-        }
+        /* General Styles with Enhanced Typography */
 
-        .topbar {
-            left: 0 !important;
-        }
-
-        .mobile-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-            display: none;
-        }
-
-        .mobile-overlay.show {
-            display: block;
-        }
-
+        /* Content Area Styles */
         .content {
-            margin-left: 0 !important;
+            margin-left: var(--sidebar-width);
+            padding-top: var(--topbar-height);
+            transition: all 0.3s ease;
+            min-height: 100vh;
         }
 
-        .brand-logo {
-            display: block;
-        }
-
-        .user-profile {
-            margin-left: 0;
-        }
-
-        .sidebar .logo {
-            justify-content: center;
-        }
-
-        .sidebar .menu-item span,
-        .sidebar .has-submenu::after {
-            display: block !important;
-        }
-
-        body.sidebar-open {
-            overflow: hidden;
-        }
-
-        .footer {
-            left: 0 !important;
+        /* Content Navigation */
+        .content-nav {
+            background: linear-gradient(45deg, #4e73df, #1cc88a);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
 
         .content-nav ul {
-            flex-wrap: nowrap;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
             overflow-x: auto;
-            padding-bottom: 5px;
         }
 
-        .content-nav ul::-webkit-scrollbar {
-            height: 4px;
+        .content-nav li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
-        .content-nav ul::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 2px;
+        .content-nav li a:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
-    }
 
-    .container-fluid {
-        padding: 20px;
-    }
+        .sidebar.collapsed+.content {
+            margin-left: var(--sidebar-collapsed-width);
+        }
+
+        .breadcrumb-area {
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            margin: 20px;
+            padding: 15px 20px;
+        }
+
+        .breadcrumb-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb-item a:hover {
+            color: #224abe;
+        }
 
 
-    /* loader */
-    .loader-container {
-        position: fixed;
-        left: var(--sidebar-width);
-        right: 0;
-        top: var(--topbar-height);
-        bottom: var(--footer-height);
-        background: rgba(255, 255, 255, 0.95);
-        display: flex;
-        /* Changed from 'none' to show by default */
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        transition: left 0.3s ease;
-    }
 
-    .sidebar.collapsed+.content .loader-container {
-        left: var(--sidebar-collapsed-width);
-    }
+        /* Table Styles */
 
-    @media (max-width: 768px) {
+
+
+        .gradient-header {
+            --bs-table-bg: transparent;
+            --bs-table-color: white;
+            background: linear-gradient(135deg, #4CAF50, #2196F3) !important;
+
+            text-align: center;
+            font-size: 0.9em;
+
+
+        }
+
+
+        td {
+            text-align: left;
+            font-size: 0.9em;
+            vertical-align: middle;
+            /* For vertical alignment */
+        }
+
+
+
+
+
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                width: var(--sidebar-width) !important;
+            }
+
+            .sidebar.mobile-show {
+                transform: translateX(0);
+            }
+
+            .topbar {
+                left: 0 !important;
+            }
+
+            .mobile-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                display: none;
+            }
+
+            .mobile-overlay.show {
+                display: block;
+            }
+
+            .content {
+                margin-left: 0 !important;
+            }
+
+            .brand-logo {
+                display: block;
+            }
+
+            .user-profile {
+                margin-left: 0;
+            }
+
+            .sidebar .logo {
+                justify-content: center;
+            }
+
+            .sidebar .menu-item span,
+            .sidebar .has-submenu::after {
+                display: block !important;
+            }
+
+            body.sidebar-open {
+                overflow: hidden;
+            }
+
+            .footer {
+                left: 0 !important;
+            }
+
+            .content-nav ul {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding-bottom: 5px;
+            }
+
+            .content-nav ul::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            .content-nav ul::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 2px;
+            }
+        }
+
+        .container-fluid {
+            padding: 20px;
+        }
+
+
+        /* loader */
         .loader-container {
-            left: 0;
-        }
-    }
-
-    /* Hide loader when done */
-    .loader-container.hide {
-        display: none;
-    }
-
-    /* Loader Animation */
-    .loader {
-        width: 50px;
-        height: 50px;
-        border: 5px solid #f3f3f3;
-        border-radius: 50%;
-        border-top: 5px solid var(--primary-color);
-        border-right: 5px solid var(--success-color);
-        border-bottom: 5px solid var(--primary-color);
-        border-left: 5px solid var(--success-color);
-        animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
+            position: fixed;
+            left: var(--sidebar-width);
+            right: 0;
+            top: var(--topbar-height);
+            bottom: var(--footer-height);
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            /* Changed from 'none' to show by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: left 0.3s ease;
         }
 
-        100% {
-            transform: rotate(360deg);
+        .sidebar.collapsed+.content .loader-container {
+            left: var(--sidebar-collapsed-width);
         }
-    }
 
-    .breadcrumb-area {
-        background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-        border-radius: 10px;
-        box-shadow: var(--card-shadow);
-        margin: 20px;
-        padding: 15px 20px;
-    }
+        @media (max-width: 768px) {
+            .loader-container {
+                left: 0;
+            }
+        }
 
-    .breadcrumb-item a {
-        color: var(--primary-color);
-        text-decoration: none;
-        transition: var(--transition);
-    }
+        /* Hide loader when done */
+        .loader-container.hide {
+            display: none;
+        }
 
-    .breadcrumb-item a:hover {
-        color: #224abe;
-    }
+        /* Loader Animation */
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 5px solid var(--primary-color);
+            border-right: 5px solid var(--success-color);
+            border-bottom: 5px solid var(--primary-color);
+            border-left: 5px solid var(--success-color);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .breadcrumb-area {
+            background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            margin: 20px;
+            padding: 15px 20px;
+        }
+
+        .breadcrumb-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb-item a:hover {
+            color: #224abe;
+        }
     </style>
     <style>
-    /* Unique styling for the download button */
-    .btnDownload {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-
-    /* Media query for responsiveness */
-    @media screen and (max-width: 768px) {
+        /* Unique styling for the download button */
         .btnDownload {
             position: absolute;
             top: 0;
             right: 0;
         }
-    }
 
-    .btndownload {
-        position: absolute;
-        right: 35px;
-        bottom: 15px;
-    }
+        /* Media query for responsiveness */
+        @media screen and (max-width: 768px) {
+            .btnDownload {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
 
-    /* Media query for responsiveness */
-    @media screen and (max-width: 768px) {
         .btndownload {
             position: absolute;
-            right: 25px;
+            right: 35px;
             bottom: 15px;
         }
-    }
+
+        /* Media query for responsiveness */
+        @media screen and (max-width: 768px) {
+            .btndownload {
+                position: absolute;
+                right: 25px;
+                bottom: 15px;
+            }
+        }
     </style>
 
     <style>
-    /* Hide the content initially */
-    #pdf-content {
-        display: none;
-    }
+        /* Hide the content initially */
+        #pdf-content {
+            display: none;
+        }
 
-    /* Custom table styling */
-    .custom-table th,
-    .custom-table td {
-        padding: 5px;
-        font-size: 12px;
-        text-align: center;
-    }
+        /* Custom table styling */
+        .custom-table th,
+        .custom-table td {
+            padding: 5px;
+            font-size: 12px;
+            text-align: center;
+        }
 
-    /* Chart Styling */
-    .chart {
-        width: 300px;
-        height: 210px;
-        margin: 20px auto;
-        border: 1px solid #ccc;
-        text-align: center;
-    }
+        /* Chart Styling */
+        .chart {
+            width: 300px;
+            height: 210px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
 
-    .bar {
-        display: inline-block;
-        width: 21px;
-        margin-top: 25px;
-        margin-right: 1px;
-        margin-left: 3px;
-        position: relative;
-        margin-bottom: 28px;
-        background-color: #3498db;
-    }
+        .bar {
+            display: inline-block;
+            width: 21px;
+            margin-top: 25px;
+            margin-right: 1px;
+            margin-left: 3px;
+            position: relative;
+            margin-bottom: 28px;
+            background-color: #3498db;
+        }
 
-    .bar-label {
-        position: absolute;
-        bottom: -25px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        font-size: 10px;
-        font-weight: bold;
-    }
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 10px;
+            font-weight: bold;
+        }
 
-    /* Flexbox Layout */
-    .row {
-        display: flex;
-    }
+        /* Flexbox Layout */
+        .row {
+            display: flex;
+        }
 
-    .column {
-        flex: 1;
-        padding: 10px;
-    }
+        .column {
+            flex: 1;
+            padding: 10px;
+        }
 
-    #pdf-content {
-        display: none;
-    }
+        #pdf-content {
+            display: none;
+        }
 
-    /* Updated table styling specifically for table1 */
-    #table1 th {
-        background-color: #ddd !important;
-        color: #000;
-        border: 1px solid #000;
-        padding: 8px;
-        font-size: 13px;
-        text-align: center;
-        font-weight: bold;
-    }
+        /* Updated table styling specifically for table1 */
+        #table1 th {
+            background-color: #ddd !important;
+            color: #000;
+            border: 1px solid #000;
+            padding: 8px;
+            font-size: 13px;
+            text-align: center;
+            font-weight: bold;
+        }
 
-    #table1 td {
-        border: 1px solid #000;
-        padding: 6px;
-        font-size: 12px;
-        text-align: center;
-        font-weight: bold;
-    }
+        #table1 td {
+            border: 1px solid #000;
+            padding: 6px;
+            font-size: 12px;
+            text-align: center;
+            font-weight: bold;
+        }
 
-    #table1 {
-        border-collapse: collapse;
-        width: 99%;
-    }
+        #table1 {
+            border-collapse: collapse;
+            width: 99%;
+        }
 
-    /* Keep other styles as needed */
-    .chart {
-        width: 300px;
-        height: 210px;
-        margin: 20px auto;
-        border: 1px solid #ccc;
-        text-align: center;
-    }
+        /* Keep other styles as needed */
+        .chart {
+            width: 300px;
+            height: 210px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
 
-    .row {
-        display: flex;
-    }
+        .row {
+            display: flex;
+        }
 
-    .column {
-        flex: 1;
-        padding: 10px;
-    }
+        .column {
+            flex: 1;
+            padding: 10px;
+        }
     </style>
 
 
@@ -637,189 +637,189 @@ include("session.php");
     </div>
 
     <script>
-    const loaderContainer = document.getElementById('loaderContainer');
-
-    function showLoader() {
-        loaderContainer.classList.add('show');
-    }
-
-    function hideLoader() {
-        loaderContainer.classList.remove('show');
-    }
-
-    //    automatic loader
-    document.addEventListener('DOMContentLoaded', function() {
         const loaderContainer = document.getElementById('loaderContainer');
-        let loadingTimeout;
+
+        function showLoader() {
+            loaderContainer.classList.add('show');
+        }
 
         function hideLoader() {
-            loaderContainer.classList.add('hide');
+            loaderContainer.classList.remove('show');
         }
 
-        function showError() {
-            console.error('Page load took too long or encountered an error');
-            // You can add custom error handling here
-        }
+        //    automatic loader
+        document.addEventListener('DOMContentLoaded', function() {
+            const loaderContainer = document.getElementById('loaderContainer');
+            let loadingTimeout;
 
-        // Set a maximum loading time (10 seconds)
-        loadingTimeout = setTimeout(showError, 10000);
-
-        // Hide loader when everything is loaded
-        window.onload = function() {
-            clearTimeout(loadingTimeout);
-
-            // Add a small delay to ensure smooth transition
-            setTimeout(hideLoader, 500);
-        };
-
-        // Error handling
-        window.onerror = function(msg, url, lineNo, columnNo, error) {
-            clearTimeout(loadingTimeout);
-            showError();
-            return false;
-        };
-    });
-
-    document.addEventListener("DOMContentLoaded", function() {
-        // Cache DOM elements
-        const elements = {
-            hamburger: document.getElementById('hamburger'),
-            sidebar: document.getElementById('sidebar'),
-            mobileOverlay: document.getElementById('mobileOverlay'),
-            menuItems: document.querySelectorAll('.menu-item'),
-            submenuItems: document.querySelectorAll('.submenu-item') // Add submenu items to cache
-        };
-
-        // Set active menu item based on current path
-        function setActiveMenuItem() {
-            const currentPath = window.location.pathname.split('/').pop();
-
-            // Clear all active states first
-            elements.menuItems.forEach(item => item.classList.remove('active'));
-            elements.submenuItems.forEach(item => item.classList.remove('active'));
-
-            // Check main menu items
-            elements.menuItems.forEach(item => {
-                const itemPath = item.getAttribute('href')?.replace('/', '');
-                if (itemPath === currentPath) {
-                    item.classList.add('active');
-                    // If this item has a parent submenu, activate it too
-                    const parentSubmenu = item.closest('.submenu');
-                    const parentMenuItem = parentSubmenu?.previousElementSibling;
-                    if (parentSubmenu && parentMenuItem) {
-                        parentSubmenu.classList.add('active');
-                        parentMenuItem.classList.add('active');
-                    }
-                }
-            });
-
-            // Check submenu items
-            elements.submenuItems.forEach(item => {
-                const itemPath = item.getAttribute('href')?.replace('/', '');
-                if (itemPath === currentPath) {
-                    item.classList.add('active');
-                    // Activate parent submenu and its trigger
-                    const parentSubmenu = item.closest('.submenu');
-                    const parentMenuItem = parentSubmenu?.previousElementSibling;
-                    if (parentSubmenu && parentMenuItem) {
-                        parentSubmenu.classList.add('active');
-                        parentMenuItem.classList.add('active');
-                    }
-                }
-            });
-        }
-
-        // Handle mobile sidebar toggle
-        function handleSidebarToggle() {
-            if (window.innerWidth <= 768) {
-                elements.sidebar.classList.toggle('mobile-show');
-                elements.mobileOverlay.classList.toggle('show');
-                document.body.classList.toggle('sidebar-open');
-            } else {
-                elements.sidebar.classList.toggle('collapsed');
+            function hideLoader() {
+                loaderContainer.classList.add('hide');
             }
-        }
 
-        // Handle window resize
-        function handleResize() {
-            if (window.innerWidth <= 768) {
-                elements.sidebar.classList.remove('collapsed');
-                elements.sidebar.classList.remove('mobile-show');
-                elements.mobileOverlay.classList.remove('show');
-                document.body.classList.remove('sidebar-open');
-            } else {
-                elements.sidebar.style.transform = '';
-                elements.mobileOverlay.classList.remove('show');
-                document.body.classList.remove('sidebar-open');
+            function showError() {
+                console.error('Page load took too long or encountered an error');
+                // You can add custom error handling here
             }
-        }
 
-        // Toggle User Menu
-        const userMenu = document.getElementById('userMenu');
-        const dropdownMenu = userMenu.querySelector('.dropdown-menu');
-        userMenu.addEventListener('click', (e) => {
-            e.stopPropagation();
-            dropdownMenu.classList.toggle('show');
+            // Set a maximum loading time (10 seconds)
+            loadingTimeout = setTimeout(showError, 10000);
+
+            // Hide loader when everything is loaded
+            window.onload = function() {
+                clearTimeout(loadingTimeout);
+
+                // Add a small delay to ensure smooth transition
+                setTimeout(hideLoader, 500);
+            };
+
+            // Error handling
+            window.onerror = function(msg, url, lineNo, columnNo, error) {
+                clearTimeout(loadingTimeout);
+                showError();
+                return false;
+            };
         });
 
-        // Close dropdown when clicking outside
-        document.addEventListener('click', () => {
-            dropdownMenu.classList.remove('show');
-        });
+        document.addEventListener("DOMContentLoaded", function() {
+            // Cache DOM elements
+            const elements = {
+                hamburger: document.getElementById('hamburger'),
+                sidebar: document.getElementById('sidebar'),
+                mobileOverlay: document.getElementById('mobileOverlay'),
+                menuItems: document.querySelectorAll('.menu-item'),
+                submenuItems: document.querySelectorAll('.submenu-item') // Add submenu items to cache
+            };
 
-        // Enhanced Toggle Submenu with active state handling
-        const menuItems = document.querySelectorAll('.has-submenu');
-        menuItems.forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.preventDefault(); // Prevent default if it's a link
-                const submenu = item.nextElementSibling;
+            // Set active menu item based on current path
+            function setActiveMenuItem() {
+                const currentPath = window.location.pathname.split('/').pop();
 
-                // Toggle active state for the clicked menu item and its submenu
-                item.classList.toggle('active');
-                submenu.classList.toggle('active');
+                // Clear all active states first
+                elements.menuItems.forEach(item => item.classList.remove('active'));
+                elements.submenuItems.forEach(item => item.classList.remove('active'));
 
-                // Handle submenu item clicks
-                const submenuItems = submenu.querySelectorAll('.submenu-item');
-                submenuItems.forEach(submenuItem => {
-                    submenuItem.addEventListener('click', (e) => {
-                        // Remove active class from all submenu items
-                        submenuItems.forEach(si => si.classList.remove(
-                            'active'));
-                        // Add active class to clicked submenu item
-                        submenuItem.classList.add('active');
-                        e.stopPropagation(); // Prevent event from bubbling up
+                // Check main menu items
+                elements.menuItems.forEach(item => {
+                    const itemPath = item.getAttribute('href')?.replace('/', '');
+                    if (itemPath === currentPath) {
+                        item.classList.add('active');
+                        // If this item has a parent submenu, activate it too
+                        const parentSubmenu = item.closest('.submenu');
+                        const parentMenuItem = parentSubmenu?.previousElementSibling;
+                        if (parentSubmenu && parentMenuItem) {
+                            parentSubmenu.classList.add('active');
+                            parentMenuItem.classList.add('active');
+                        }
+                    }
+                });
+
+                // Check submenu items
+                elements.submenuItems.forEach(item => {
+                    const itemPath = item.getAttribute('href')?.replace('/', '');
+                    if (itemPath === currentPath) {
+                        item.classList.add('active');
+                        // Activate parent submenu and its trigger
+                        const parentSubmenu = item.closest('.submenu');
+                        const parentMenuItem = parentSubmenu?.previousElementSibling;
+                        if (parentSubmenu && parentMenuItem) {
+                            parentSubmenu.classList.add('active');
+                            parentMenuItem.classList.add('active');
+                        }
+                    }
+                });
+            }
+
+            // Handle mobile sidebar toggle
+            function handleSidebarToggle() {
+                if (window.innerWidth <= 768) {
+                    elements.sidebar.classList.toggle('mobile-show');
+                    elements.mobileOverlay.classList.toggle('show');
+                    document.body.classList.toggle('sidebar-open');
+                } else {
+                    elements.sidebar.classList.toggle('collapsed');
+                }
+            }
+
+            // Handle window resize
+            function handleResize() {
+                if (window.innerWidth <= 768) {
+                    elements.sidebar.classList.remove('collapsed');
+                    elements.sidebar.classList.remove('mobile-show');
+                    elements.mobileOverlay.classList.remove('show');
+                    document.body.classList.remove('sidebar-open');
+                } else {
+                    elements.sidebar.style.transform = '';
+                    elements.mobileOverlay.classList.remove('show');
+                    document.body.classList.remove('sidebar-open');
+                }
+            }
+
+            // Toggle User Menu
+            const userMenu = document.getElementById('userMenu');
+            const dropdownMenu = userMenu.querySelector('.dropdown-menu');
+            userMenu.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('show');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', () => {
+                dropdownMenu.classList.remove('show');
+            });
+
+            // Enhanced Toggle Submenu with active state handling
+            const menuItems = document.querySelectorAll('.has-submenu');
+            menuItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent default if it's a link
+                    const submenu = item.nextElementSibling;
+
+                    // Toggle active state for the clicked menu item and its submenu
+                    item.classList.toggle('active');
+                    submenu.classList.toggle('active');
+
+                    // Handle submenu item clicks
+                    const submenuItems = submenu.querySelectorAll('.submenu-item');
+                    submenuItems.forEach(submenuItem => {
+                        submenuItem.addEventListener('click', (e) => {
+                            // Remove active class from all submenu items
+                            submenuItems.forEach(si => si.classList.remove(
+                                'active'));
+                            // Add active class to clicked submenu item
+                            submenuItem.classList.add('active');
+                            e.stopPropagation(); // Prevent event from bubbling up
+                        });
                     });
                 });
             });
-        });
 
-        // Initialize event listeners
-        function initializeEventListeners() {
-            // Sidebar toggle for mobile and desktop
-            if (elements.hamburger && elements.mobileOverlay) {
-                elements.hamburger.addEventListener('click', handleSidebarToggle);
-                elements.mobileOverlay.addEventListener('click', handleSidebarToggle);
+            // Initialize event listeners
+            function initializeEventListeners() {
+                // Sidebar toggle for mobile and desktop
+                if (elements.hamburger && elements.mobileOverlay) {
+                    elements.hamburger.addEventListener('click', handleSidebarToggle);
+                    elements.mobileOverlay.addEventListener('click', handleSidebarToggle);
+                }
+                // Window resize handler
+                window.addEventListener('resize', handleResize);
             }
-            // Window resize handler
-            window.addEventListener('resize', handleResize);
-        }
 
-        // Initialize everything
-        setActiveMenuItem();
-        initializeEventListeners();
-    });
-
-
-    $(document).ready(function() {
-        $('#zero_config').DataTable({
-            responsive: true, // Enable responsive design for smaller screens
-            "lengthMenu": [10, 25, 50, 75, 100], // Set the number of rows per page
-            "pageLength": 10, // Default number of rows per page
-            "order": [
-                [0, 'asc']
-            ] // Sort the table by the first column (S.No)
+            // Initialize everything
+            setActiveMenuItem();
+            initializeEventListeners();
         });
-    });
+
+
+        $(document).ready(function() {
+            $('#zero_config').DataTable({
+                responsive: true, // Enable responsive design for smaller screens
+                "lengthMenu": [10, 25, 50, 75, 100], // Set the number of rows per page
+                "pageLength": 10, // Default number of rows per page
+                "order": [
+                    [0, 'asc']
+                ] // Sort the table by the first column (S.No)
+            });
+        });
     </script>
 
 
@@ -894,40 +894,40 @@ include("session.php");
 
 
     <script>
-    function generatePDF() {
-        var originalElement = document.getElementById('pdf-content');
-        console.log("Hello, the button was clicked!");
-        // Select the HTML element to be converted to PDF
-        // Create a new div element
-        var pdfContainer = document.createElement('div');
+        function generatePDF() {
+            var originalElement = document.getElementById('pdf-content');
+            console.log("Hello, the button was clicked!");
+            // Select the HTML element to be converted to PDF
+            // Create a new div element
+            var pdfContainer = document.createElement('div');
 
-        // Set the HTML content of the new div to be the same as the original content
-        pdfContainer.innerHTML = originalElement.innerHTML;
-        // Options for html2pdf
-        var options = {
-            margin: 10,
-            filename: 'Discipline report (individual.data).pdf',
-            image: {
-                type: 'jpeg',
-                quality: 0.98
-            },
-            html2canvas: {
-                scale: 2
-            },
-            jsPDF: {
-                unit: 'mm',
-                format: 'a4',
-                orientation: 'portrait'
-            },
-            // Callback to remove the new div element after PDF generation
-            onAfterRender: function() {
-                document.body.removeChild(pdfContainer);
-            }
-        };
+            // Set the HTML content of the new div to be the same as the original content
+            pdfContainer.innerHTML = originalElement.innerHTML;
+            // Options for html2pdf
+            var options = {
+                margin: 10,
+                filename: 'Discipline report (individual.data).pdf',
+                image: {
+                    type: 'jpeg',
+                    quality: 0.98
+                },
+                html2canvas: {
+                    scale: 2
+                },
+                jsPDF: {
+                    unit: 'mm',
+                    format: 'a4',
+                    orientation: 'portrait'
+                },
+                // Callback to remove the new div element after PDF generation
+                onAfterRender: function() {
+                    document.body.removeChild(pdfContainer);
+                }
+            };
 
-        // Call html2pdf library to generate PDF using the new div element
-        html2pdf(pdfContainer, options);
-    }
+            // Call html2pdf library to generate PDF using the new div element
+            html2pdf(pdfContainer, options);
+        }
     </script>
 </body>
 

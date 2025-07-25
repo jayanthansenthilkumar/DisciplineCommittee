@@ -85,7 +85,7 @@ if (isset($_POST['id_remarks'])) {
         if ($year == "2023-2027" || $year == "2023-27" || $year == "23-27" || $year == "23-2027") {
             $year = "1st year";
         }
-        
+
 
         $query = "INSERT INTO indiscipline (remarks,regno,dept,year,name,date,permission) VALUES('$remark','$regno','$dept','$year','$name','$date',0)";
 
@@ -425,8 +425,6 @@ if (isset($_POST['save_photos'])) {
 }
 
 
-
-
 if (isset($_GET['student_id'])) {
     $student_id = mysqli_real_escape_string($db, $_GET['student_id']);
     $query = "SELECT * FROM student WHERE sid='$student_id'";
@@ -450,9 +448,3 @@ if (isset($_GET['student_id'])) {
         return;
     }
 }
-
-
-
-
-
-?>

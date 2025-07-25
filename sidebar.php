@@ -89,6 +89,7 @@
         transition: all 0.3s ease;
         flex-grow: 1;
     }
+
     .menu-item.active {
         background: rgba(255, 255, 255, 0.2);
         color: white;
@@ -135,50 +136,49 @@
     }
 
 
-/* Gradient Colors */
-.icon-basic {
-    background: linear-gradient(45deg, #4facfe, #00f2fe);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-}
+    /* Gradient Colors */
+    .icon-basic {
+        background: linear-gradient(45deg, #4facfe, #00f2fe);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
 
-.icon-academic {
-    background: linear-gradient(45deg,rgb(66, 245, 221), #00d948);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-}
+    .icon-academic {
+        background: linear-gradient(45deg, rgb(66, 245, 221), #00d948);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
 
-.icon-exam {
-    background: linear-gradient(45deg,rgb(255, 145, 0),rgb(245, 59, 2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-}
+    .icon-exam {
+        background: linear-gradient(45deg, rgb(255, 145, 0), rgb(245, 59, 2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
 
-.icon-bus {
+    .icon-bus {
 
-background: #9C27B0; 
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-display: inline-block; 
-}
+        background: #9C27B0;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
 
-.icon-feedback {
-background: #E91E63;  
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-display: inline-block; 
-}
+    .icon-feedback {
+        background: #E91E63;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
 
-.icon-password {
-background: #607D8B;  
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-display: inline-block; 
-}
-    
+    .icon-password {
+        background: #607D8B;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
 </style>
 
 <div class="mobile-overlay" id="mobileOverlay"></div>
@@ -187,29 +187,23 @@ display: inline-block;
         <img src="image/mkce.png" alt="College Logo">
         <img class='s_logo' src="image/mkce_s.png" alt="College Logo">
     </div>
-
     <div class="menu">
-    <a href="chairperson.php" class="menu-item">
+        <a href="chairperson.php" class="menu-item">
             <i class="fas fa-home text-primary"></i>
             <span>Dashboard</span>
         </a>
-
         <a href="student_date.php" class="menu-item">
-            <i class="fas fa-key icon-password"></i> 
-            <span>Raise indiscipline</span>
+            <i class="fas fa-key icon-password"></i>
+            <span>Mark Indiscipline</span>
         </a>
-
-        
-
         <a href="report.php" class="menu-item">
             <i class="fas fa-bus icon-bus"></i>
-            <span>indiscipline report</span>
+            <span>Indiscipline Report</span>
         </a>
         <a href="search_data.php" class="menu-item">
             <i class="fas fa-comments icon-feedback"></i>
             <span>Student Data</span>
         </a>
-        
+
     </div>
 </div>
-

@@ -1,2 +1,0 @@
-# DisciplineCommittee
-MKCE PROJECT
